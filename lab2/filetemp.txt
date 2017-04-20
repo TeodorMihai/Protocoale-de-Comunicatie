@@ -1,0 +1,18 @@
+rec: 5120 bytes
+0
+ACK(aa)
+0
+ACK(ACK(aa))
+0
+ACK(ACK(ACK(aa)))
+0
+ACK(ACK(ACK(ACK(aa))))
+0
+ACK(ACK(ACK(ACK(ACK(aa)))))
+send: 5120 bytes 
+Mesajul intors de recv: ACK(aa)
+ ACK(aa)
+ACK(ACK(aa))
+ACK(ACK(ACK(aa)))
+ACK(ACK(ACK(ACK(aa))))
+ACK(ACK(ACK(ACK(ACK(aa)))))

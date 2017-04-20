@@ -1,0 +1,95 @@
+PASS
+2
+[RECEIVER] Starting.
+Hello. I am your homework and I want us to play a game. Send me back the word Hello then listen for more messages.
+
+Bitul calculat de mine: 1. Bitul primit: 1 
+00000001
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  0 1 
+[RECEIVER] Trimis:  
+
+Bitul calculat de mine: 0. Bitul primit: 0 
+00000000
+Trimit: ACK
+This is the first message.
+
+Bitul calculat de mine: 1. Bitul primit: 1 
+00000001
+Trimit: ACK
+This is the second. Send me the word YEY in a message and the word OK in another. After that listen for more of my orders.
+
+Bitul calculat de mine: 1. Bitul primit: 1 
+00000001
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  1 1 
+[RECEIVER] Trimis: YEY isthe secoond. Send me the word YEY in a message and the word OK in another. After that listen formore of my ordeers.
+ 
+(ack=1)(nack=2)Trimis:  1 1 
+[RECEIVER] Trimis: OK 
+Time to play that game. I choose a random number and you have to guess it. Fun no? The number is between [0, 1000). You have 10 tries to guess it. Every time you send me a number I will send you the words bigger, smaller or success. If you find it I will send you one more message after success. Start guessing. Ohh and make sure the numbers are sent as strings and they contain only digits (not even backslash n or space) so I don't get confused.
+
+Bitul calculat de mine: 1. Bitul primit: 1 
+00000001
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  1 1 
+[RECEIVER] Trimis: 512 
+bigger
+
+Bitul calculat de mine: 1. Bitul primit: 1 
+00000001
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  1 1 
+[RECEIVER] Trimis: 768 
+
+Bitul calculat de mine: 0. Bitul primit: 0 
+00000000
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  0 1 
+[RECEIVER] Trimis:  
+
+Bitul calculat de mine: 0. Bitul primit: 0 
+00000000
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  0 1 
+[RECEIVER] Trimis:  
+bigger
+
+Bitul calculat de mine: 1. Bitul primit: 1 
+00000001
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  0 1 
+[RECEIVER] Trimis:  
+bigger
+
+Bitul calculat de mine: 1. Bitul primit: 1 
+00000001
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  1 1 
+[RECEIVER] Trimis: 624 
+bigger
+
+Bitul calculat de mine: 1. Bitul primit: 1 
+00000001
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  0 1 
+[RECEIVER] Trimis:  
+
+Bitul calculat de mine: 0. Bitul primit: 0 
+00000000
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  1 1 
+[RECEIVER] Trimis: 628 
+success
+
+Bitul calculat de mine: 1. Bitul primit: 1 
+00000001
+Trimit: ACK
+Good job and thanks for playing the game with me. Hope you had fun. Send me the word exit and just exit.
+
+Bitul calculat de mine: 1. Bitul primit: 1 
+00000001
+Trimit: ACK
+(ack=1)(nack=2)Trimis:  0 1 
+[RECEIVER] Trimis:  
+[RECEIVER] Finished receiving..

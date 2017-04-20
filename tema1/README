@@ -1,0 +1,58 @@
+
+Mi-am facut niste wraper pentru functiile de receive si send.
+Tratez fiecare caz (simplu ack, parity si hamming in parte)
+In general ca sa imi dau seama ce trebuie sa trimit serverul am dat printf la mesaje. 
+Vedeam ce primesc si trimiteam mesaje corespunzator (sau ascultam).
+
+Structura temei se observa foarte rapid daca se analizeaza un pic definitiile
+de functii de la inceputul programului. Am incercats a le dau nume cat mai sugestive.
+
+Task 1:
+
+	M-am uitat la ce raspunde serverul si construiesc mesajele dorite cu sprintf.
+	Cautarea binara arata un pic ciudat pentru ca este pe biti.
+	Dupa fiecare mesaj primit/trimis verific daca s-a intamplat vreo eroare, daca da opresc programul.
+
+Task 2:
+	
+	Schimb un pic procedura fata de taskul 1, trimitand ack dupa fiecare mesaj primit, 
+	sau asteptand un ack dupa trimiterea mesajului.
+
+Task 3:
+	
+	Inainte sa trimit un mesajul construiesc bituld e paritate xor-and toti bitii mesajului
+	primit in afara celui de paritatea. Acest algoritm functioneaza chiar si cazul corupurii bitului 
+	de paritate (daca se corupe bitul de paritate stim sigur ca orice alt bit nu este corupt),
+	pentru ca se stie ca se corupe un singur bit.
+	Respect protocolul, acceptand un mesaj doar cand  bitul calculat de mine coincide cu bitul 
+	de paritate primit. La fel si la trimitere, trimit acelasi mesaj cu bitul de paritate inclus cat 
+	timp primesc nack. Intrucat datele din nack si ack pot fi corupte verific lungimile lor
+	ack fiind echivalent cu lungimea 4 (3 caractere ack  plus un caracter bitul de paritate), iar 
+	nack, 5 caractere (1 + 4).
+	La fel si cand trimit ack si nack am grija sa setez lungimea la 4 respectiv 5. Nu mai caclulez 
+	bituld e paritate pentru ca oricum serverul nu tine cont de el in aceste cazuri.
+
+Task 4:
+	
+	Ca sa pot lucra cu bitii imi definesc functii de lucru cu bitii. Numele sunt sugestive.
+	Cum codez un mesaj cu codificarea hamming:
+	Mai intai fac loc pentru pentru octetii necesari, dubland dimensiunea stringului care trebuie 
+	trimis. Apoi pentru fiecare octet creez cei doi 2 octeti aferenti codificarii hamming:
+	mai intai plasez bitii mesajului pe poztiile corespunzatoare, apoi incep sa calculez cei k biti 
+	hamming, conform formulei, luand in considerare (la codificare) doar bitii mesajului, iar la 
+	verificare si corectare xorand si bitii hamming (cei calculati de mine, nu cei ai mesajului).
+	Algoritmul merge datorita faptului ca un numar (caracter) este unic determinat prin scrierea lui 
+	in baza 2, adica pe bitii hamming. Fiecare bit  are un index care este unic determinat de cei 4 
+	biti hamming(sindromul). Daca de exemplu: bitul cu indexul al 6 lea a fost corupt, P4 si P2 nu 
+	vor da corespunzat (adica vor da 1). Din fatul ca P4 nu este bun aflam ca orice bit de pe indexul 
+	care are al 4-lea bit (de la nesemnficiativ la semnificativ) 1 poate fi corupt. Similar P2, cu 
+	mentiunea ca este vorba de al 2 bit. Astfel se determina in mod unic indexului bitului corupt 
+	folosind sindromul (cei 4 biti hamming).
+
+
+
+
+	
+
+
+

@@ -1,0 +1,7 @@
+6
+George:Nichita Stanescu.txt
+Lucia:server.cpp
+Lucia:puscarie.txt
+Costel:doars.txt
+Ana:tatae.txt
+Fanel:nana.txt
